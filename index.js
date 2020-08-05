@@ -101,7 +101,7 @@ async function emit(type, ...args) {
       if (isPromise(rlt)) {
         await rlt
       }
-      if (this._events[type][i][TYPE_KEYNAME] === 'once') {
+      if (this._events[type] && this._events[type][i][TYPE_KEYNAME] === 'once') {
         onceListeners.push(event)
       }
     }
